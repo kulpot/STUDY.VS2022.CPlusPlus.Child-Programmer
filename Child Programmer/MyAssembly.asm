@@ -3,6 +3,7 @@
 .model flat, c
 .stack 100h
 .data
+
 ;count dword ?		; -------> ---- Assembly Adding Powers ----
 ;	counter dword 0		; dword(doubleWord) is 32bits and 2words ---> 1byte=8bits, 2bytes=word, 4bytes(32bits)=2words -> dword
 ;count dword 0		; ------- Alternating Operations - A First Code Attempt --------
@@ -10,9 +11,9 @@
 ;power dword 2		; ------- Alternating Operations - A First Code Attempt --------
 ;total dword 0		; ------- Alternating Operations - A First Code Attempt --------
 
-count dword 0		; ----- Assembly - Stack 1, 2 --------- Alternating Operations - Making the Loop Do All of the Work ----------------------------
-power dword 1		; ----- Assembly - Stack 1, 2--------- Alternating Operations - Making the Loop Do All of the Work ----------------------------
-evenOrOddCheckValue dword 2			; ----------- if else in Assembly ------------
+;count dword 0		; ----- Assembly - Stack 1, 2 --------- Alternating Operations - Making the Loop Do All of the Work ----------------------------
+;power dword 1		; ----- Assembly - Stack 1, 2--------- Alternating Operations - Making the Loop Do All of the Work ----------------------------
+;evenOrOddCheckValue dword 2			; ----------- if else in Assembly ------------
 
 .code
 
@@ -30,20 +31,18 @@ doit proc			; proc -- procedure
 	; --------------------------------- Child Programmer -------------------------------------------------
 	; ref link:https://www.youtube.com/watch?v=_YYOnqMN4wQ&list=PLRwVmtr-pp05c1HTBj1no6Fl6C6mlxYDG&index=48
 
+	; simple program thats add 1+2+3+4+5
+
+	mov eax,0		;eax - is a registers which is a tiny component of cpu
+	mov ebx,1		; move 1 to ebx
+again:
+	add eax,ebx		; add whatever in ebx to eax
+	inc ebx			; increment ebx means add 1 to ebx
+	cmp ebx,5		; compare ebx to 5
+	jle again		; jumplessthanorequalto "again:" -- will activate when cmp ebx is jle to 5
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+ret
 
 	; --------------------------- Spaghetti Code ----------------------------------------------------------
 	; ref link:https://www.youtube.com/watch?v=RXpMHdB2Lfg&list=PLRwVmtr-pp05c1HTBj1no6Fl6C6mlxYDG&index=47
@@ -1332,14 +1331,14 @@ doit proc			; proc -- procedure
 
 doit endp
 
-;CalculateNextPower proc
-CalculateNextPower:
-	; Next power:	
-	mov eax, power
-	mul ebx			
-	mov power, eax
-	inc count		
-	ret
-;CalculateNextPower endp
+;;CalculateNextPower proc
+;CalculateNextPower:
+;	; Next power:	
+;	mov eax, power
+;	mul ebx			
+;	mov power, eax
+;	inc count		
+;	ret
+;;CalculateNextPower endp
 
 end
