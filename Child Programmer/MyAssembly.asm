@@ -61,43 +61,43 @@ doit proc			; proc -- procedure
 ;		2^5				32				2048			800
 ;		2^6				64				2112			840
 
-	mov ebx, 2			; Base
-	;xor ecx, ecx		; 0 out ecx -- startout in zero erases the total
-	mov ecx, 1
-
-again:				; loop mul to add
-	; Repeat if necessary
-	cmp count, 5		
-	je Done					; je - jumpequal
-
-	call CalculateNextPower			; call is the same as jmp
-
-	; Check if we are at an even or odd power
-	mov eax, count
-	xor edx, edx
-	div evenOrOddCheckValue
-	cmp edx, 0
-	je DoAdd
-	jmp DoMultiply
-
-DoMultiply:
-	; Multiply the current power to the total
-	mov eax, power
-	mul ecx				
-	mov ecx, eax	
-	jmp PopOut
-
-DoAdd:
-	; Add the power to total
-	add ecx, power
-	jmp PopOut
-
-PopOut:
-	jmp again
-
-
-Done:
-	ret
+;	mov ebx, 2			; Base
+;	;xor ecx, ecx		; 0 out ecx -- startout in zero erases the total
+;	mov ecx, 1
+;
+;again:				; loop mul to add
+;	; Repeat if necessary
+;	cmp count, 5		
+;	je Done					; je - jumpequal
+;
+;	call CalculateNextPower			; call is the same as jmp
+;
+;	; Check if we are at an even or odd power
+;	mov eax, count
+;	xor edx, edx
+;	div evenOrOddCheckValue
+;	cmp edx, 0
+;	je DoAdd
+;	jmp DoMultiply
+;
+;DoMultiply:
+;	; Multiply the current power to the total
+;	mov eax, power
+;	mul ecx				
+;	mov ecx, eax	
+;	jmp PopOut
+;
+;DoAdd:
+;	; Add the power to total
+;	add ecx, power
+;	jmp PopOut
+;
+;PopOut:
+;	jmp again
+;
+;
+;Done:
+;	ret
 
 ;CalculateNextPower:
 ;	; Next power:	; redundant code
