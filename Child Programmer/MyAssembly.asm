@@ -27,6 +27,24 @@ doit proc			; proc -- procedure
 	; labels -- looks like proc with ":"  , can only be called inside assembly program, while doit proc is outside 
 	; goto's badside - ++spaghetti code 
 
+	; --------------------------------- Child Programmer -------------------------------------------------
+	; ref link:https://www.youtube.com/watch?v=_YYOnqMN4wQ&list=PLRwVmtr-pp05c1HTBj1no6Fl6C6mlxYDG&index=48
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	; --------------------------- Spaghetti Code ----------------------------------------------------------
 	; ref link:https://www.youtube.com/watch?v=RXpMHdB2Lfg&list=PLRwVmtr-pp05c1HTBj1no6Fl6C6mlxYDG&index=47
 
